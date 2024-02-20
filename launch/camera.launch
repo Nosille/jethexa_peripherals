@@ -1,7 +1,7 @@
 <launch>
   <arg name="camera" default="camera" />
   <arg name="tf_prefix" default="" />
-  <arg name="camera_type" default="$(optenv CAMERA_TYPE DABAI)"/>
+  <arg name="camera_type" default="$(optenv CAMERA_TYPE CSI)"/>
 
   <!-- 相机型号 --> 
   <param name="camera_type" value="$(arg camera_type)" />

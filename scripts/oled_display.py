@@ -22,7 +22,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 import time
 import Adafruit_SSD1306
-from vision_utils import fps
+#from vision_utils import fps
 from wireless_utils import dev_state
 from std_srvs.srv import SetBool, SetBoolRequest, SetBoolResponse
 from std_msgs.msg import Float32
@@ -54,7 +54,7 @@ class OledDisplayNode:
         # 初始化OLED和相关的资源
         self.screen = Adafruit_SSD1306.SSD1306_128_32(rst=None, i2c_bus=1, gpio=1, i2c_address=0x3C)
         self.screen.begin() # 启动屏幕
-        self.fps = fps.FPS() # 屏幕 fps 统计器
+        #self.fps = FPS().start() # 屏幕 fps 统计器
 
         # 实现功能用到的变量资源
         self.lock = threading.RLock()
@@ -222,7 +222,7 @@ class OledDisplayNode:
         self.grams['imu_quart'] = np.array(img, dtype=np.uint8) * 255
 
     def refresh(self, timer_event):
-        self.fps.update()
+        #self.fps.update()
         # 如果未开启屏幕或者未开启刷新不需要做后面操作
         if not self.on_off or not self.refresh_enable:
             return

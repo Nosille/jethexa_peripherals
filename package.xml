@@ -53,6 +53,10 @@
   <depend>gscam</depend>
   <depend>joy</depend>
   <depend>laser_filters</depend>
+  <depend>rgbd_launch</depend>
+  <depend>web_video_server</depend>
+  <depend>imu_tools</depend>
+  <depend>python3_pygame</depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
